@@ -20,8 +20,8 @@ if __name__ == '__main__':
         exit()
 
     modem = GsmModem(PORT, BAUDRATE, smsReceivedCallbackFunc=None)
-    modem.smsTextMode = False
-    modem.connect(PIN)
+    modem.smsTextMode = True
+    #modem.connect(PIN)
 
     modem.sendSms("+79227814419",options.ip)
 
