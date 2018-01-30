@@ -19,11 +19,11 @@ if __name__ == '__main__':
         parser.print_help()
         exit()
 
-    modem = GsmModem(PORT, BAUDRATE, smsReceivedCallbackFunc=None)
+    modem = GsmModem(PORT, BAUDRATE)
     modem.smsTextMode = True
     #modem.connect(PIN)
 
-    modem.sendSms("+79227814419",options.ip)
+    modem.sendSms("+79227814419", options.ip)
 
     try:
         modem.rxThread.join(10)  # Specify a (huge) timeout so that it essentially blocks indefinitely, but still receives CTRL+C interrupt signal

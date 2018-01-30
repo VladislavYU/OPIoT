@@ -1,5 +1,5 @@
 #!/bin/bash
 
-hostName -I > $ip
+ip=orangepi
 
-python ./home/orangepi/OPIoT/scripts/send_msg.py -a $ip
+python /home/orangepi/OPIoT/scripts/send_msg.py -a $ip
