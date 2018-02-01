@@ -18,18 +18,22 @@ ser.write('AT\r')
 time.sleep(3)
 readPort(ser)
 
-ser.write('AT+CFUN=1')
+ser.write('AT+CFUN=1\r')
 time.sleep(3)
 readPort(ser)
 
-ser.write('AT+CPIN=0000')
+ser.write('AT+CPIN=0000\r')
 time.sleep(3)
 readPort(ser)
 
-ser.write('AT+CMGS=+79227814419')
+ser.write('AT+CMGF=1\r')
+time.sleep(3)
+readPort(ser)
+
+ser.write('AT+CMGS=+79227814419\r')
 time.sleep(3)
 
-ser.write('it is work/u001A')
+ser.write('it is work\\x1a')
 
 
 def readPort():
