@@ -1,6 +1,5 @@
 import serial
 import time
-from modemGSM.ModemGSM import ModemGSM
 
 PORT = '/dev/modem0'
 BAUDRATE = 115200
