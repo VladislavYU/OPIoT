@@ -4,7 +4,7 @@
 import locale
 from optparse import OptionParser
 
-from modemGSM import ModemGSM
+from modemGSM.ModemGSM import ModemGSM
 
 parser = OptionParser()
 parser.add_option("-a", "--address", action="store", dest="ip", type="string", help="Cureent ip address")
@@ -13,6 +13,9 @@ parser.add_option("-a", "--address", action="store", dest="ip", type="string", h
 if __name__ == '__main__':
     encode = locale.getdefaultlocale()
     (options, args) = parser.parse_args()
+
+
+    print (modem)
 
     if options.ip is None:
         parser.print_help()

@@ -38,3 +38,5 @@ class ModemGSM:
         time.sleep(3)
 
 
+    def close(self):
+        self.ser.closed
