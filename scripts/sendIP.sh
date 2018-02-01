@@ -7,4 +7,4 @@ while IFS=$': \t' read -a line ;do
   done< <(LANG=C /sbin/ifconfig)
 echo $myip
 
-python /home/orangepi/OPIoT/scripts/send_msg.py -a $myip
+python /home/orangepi/opiot/scripts/send_msg.py -a $myip
