@@ -1,5 +1,6 @@
 import serial
 import time
+from modemGSM.ModemGSM import ModemGSM
 
 PORT = '/dev/modem0'
 BAUDRATE = 115200
@@ -8,7 +9,6 @@ PIN = "0000" # SIM card PIN (if any)
 def readPort(ser):
     while ser.inWaiting():
         print(ser.read())
-    ser.close()
 
 ser = serial.Serial(port='/dev/modem0', baudrate=115200, timeout=3)
 
@@ -19,7 +19,7 @@ time.sleep(3)
 readPort(ser)
 
 ser.write('AT+CFUN=1\r')
-time.sleep(3)
+time.sleep(6)
 readPort(ser)
 
 ser.write('AT+CPIN=0000\r')
@@ -32,11 +32,10 @@ readPort(ser)
 
 ser.write('AT+CMGS=+79227814419\r')
 time.sleep(3)
+readPort(ser)
 
-ser.write('it is work\\x1a')
+ser.write('it is work\x1a')
+time.sleep(3)
+readPort(ser)
 
-
-def readPort():
-    while ser.inWaiting():
-        print(ser.read())
-    ser.close()
+ser.close()
