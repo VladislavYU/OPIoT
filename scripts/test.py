@@ -19,6 +19,6 @@ if __name__ == '__main__':
     modem.sendSms(+79227814419, sms)
 
     try:
-        modem.rxThread.join(10)  # Specify a (huge) timeout so that it essentially blocks indefinitely, but still receives CTRL+C interrupt signal
+        modem.rxThread.join(100)  # Specify a (huge) timeout so that it essentially blocks indefinitely, but still receives CTRL+C interrupt signal
     finally:
         modem.close();
